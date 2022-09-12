@@ -22,6 +22,7 @@ import * as gitFunctions from "./helpers/gitFunctions.js";
 
 // psst, super secret credentials
 gitFunctions.creds(process.env);
+
 // get the file from the repo
 const file = await gitFunctions.repos(".github").dir("profile").file("README.md");
 
@@ -34,13 +35,13 @@ const response = await file.edit({
 
 // run if the process fails
 if (response.fail) {
-  console.log("Could not add interesitng stuff to the README >.<");
+  console.log("Could not add interesitng stuff to the README @_@");
   console.log(response.error.toString());
 }
 
 /**
  * Output:
- * Could not add interesitng stuff to the README >.<
+ * Could not add interesitng stuff to the README @_@
  * File `interestingStuff.js` does not exist
  */
 ```
